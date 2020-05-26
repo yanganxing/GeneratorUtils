@@ -1,0 +1,14 @@
+<#include "/src/main/resources/template/macro.include"/>
+<#assign className = table.className>   
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="${mapperPackage}.${table.className}Mapper">
+	<resultMap id="BaseResultMap" type="${beansPackage}.entity.${table.className}Entity">
+		<#list table.columns as column>
+		<result property="${column.columnNameFirstLower}" column="${column.columnName}"/>
+		</#list>
+	</resultMap>
+
+</mapper>
+
