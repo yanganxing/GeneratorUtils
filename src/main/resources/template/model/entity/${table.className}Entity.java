@@ -2,11 +2,10 @@
 <#assign classNameLower = className?uncap_first> 
 package ${beansPackage}.entity;
 
-import ${basePackage}.common.frame.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import java.util.Date;
+
 
 /**
  * @author Alix(杨安星)
@@ -16,11 +15,10 @@ import java.util.Date;
  */
 @Data
 @TableName("${table.tableName}")
-public class ${table.className}Entity extends BaseEntity {
+public class ${table.className}Entity {
 	<#list table.columns as column>
-	<#if column.columnNameFirstLower != 'id' && column.columnNameFirstLower != 'createTime' && column.columnNameFirstLower != 'createBy' && column.columnNameFirstLower != 'createId' && column.columnNameFirstLower != 'updateBy' && column.columnNameFirstLower != 'updateByName' && column.columnNameFirstLower != 'updateTime' && column.columnNameFirstLower != 'delFlag'>
 	@TableField(value = "${column.columnName}")
 	private ${column.possibleShortJavaType} ${column.columnNameFirstLower};
-	</#if>
+
 	</#list>
 }

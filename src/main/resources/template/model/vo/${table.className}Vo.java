@@ -2,9 +2,9 @@
 <#assign classNameLower = className?uncap_first> 
 package ${beansPackage}.vo;
 
-import ${basePackage}.common.frame.BaseVo;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import java.util.Date;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author Alix(杨安星)
@@ -13,10 +13,10 @@ import java.util.Date;
  * @since 1.8
  */
 @Data
-public class ${table.className}Vo extends BaseVo {
+public class ${table.className}Vo{
 	<#list table.columns as column>
-	<#if column.columnNameFirstLower != 'id' && column.columnNameFirstLower != 'createTime' && column.columnNameFirstLower != 'createBy' && column.columnNameFirstLower != 'createId' && column.columnNameFirstLower != 'updateBy' && column.columnNameFirstLower != 'updateByName' && column.columnNameFirstLower != 'updateTime' && column.columnNameFirstLower != 'delFlag'>
+	@ApiModelProperty(value = "${column.remark}" )
 	private ${column.possibleShortJavaType} ${column.columnNameFirstLower};
-	</#if>
+
 	</#list>
 }

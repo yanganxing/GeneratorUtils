@@ -5,12 +5,14 @@ import lombok.Getter;
 
 import java.sql.Types;
 
+
 /**
- * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
- * @version 1.0.0
- * @date 2020/4/26 21:37
- * @since 1.0.0
+ * jdbc类型
+ *
+ * @author Alix(杨安星)
+ * @date 2020-05-30 15:29:31
  */
+@SuppressWarnings("ALL")
 @Getter
 @AllArgsConstructor
 public enum JdbcType {
@@ -40,7 +42,8 @@ public enum JdbcType {
     BLOB(Types.BLOB),
     CLOB(Types.CLOB),
     BOOLEAN(Types.BOOLEAN),
-    CURSOR(-10), // Oracle
+    // Oracle
+    CURSOR(-10),
     UNDEFINED(Integer.MIN_VALUE + 1000),
     NVARCHAR(-9),
     NCHAR(-15),

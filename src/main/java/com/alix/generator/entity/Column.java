@@ -74,8 +74,8 @@ public class Column {
     }
 
     public String getJavaType() {
-        String columnName = DbUtil.makeAllWordFirstLetterUpperCase(this.columnName);
-        return TypeMapping.getJavaType(columnName);
+        String columnType = DbUtil.makeAllWordFirstLetterUpperCase(this.columnType);
+        return TypeMapping.getJavaType(columnType);
     }
 
     /**
